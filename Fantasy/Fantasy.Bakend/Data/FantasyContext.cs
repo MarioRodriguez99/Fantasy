@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Fantasy.Bakend.Data
 {
-    public class DataContext : DbContext
+    public class FantasyContext : DbContext
 
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        public FantasyContext(DbContextOptions<FantasyContext> options) : base(options)
         {
         }
 
