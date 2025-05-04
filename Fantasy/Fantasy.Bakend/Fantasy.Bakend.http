@@ -1,0 +1,6 @@
+@Fantasy.Bakend_HostAddress = http://localhost:5255
+
+GET {{Fantasy.Bakend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
