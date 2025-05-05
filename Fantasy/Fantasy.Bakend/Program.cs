@@ -9,6 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//Add Dbcontext
 builder.Services.AddDbContext<FantasyContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection")));
 
