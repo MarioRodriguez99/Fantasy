@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Fantasy.Bakend.Controllers
+namespace Fantasy.Bakend.Controllers //https://localhost:7113/
 {
     [ApiController]
     [Route("api/[controller]")]
