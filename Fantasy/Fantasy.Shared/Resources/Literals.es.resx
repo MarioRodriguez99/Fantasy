@@ -150,4 +150,34 @@
   <data name="Country" xml:space="preserve">
     <value>País</value>
   </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmacíon </value>
+  </data>
+  <data name="LeaveandLoseChanges" xml:space="preserve">
+    <value>Quiere salir de la pagina y perder sus cambios?</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Guardar Cambios</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Regresar</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="RecordSaveOk" xml:space="preserve">
+    <value>Registro guardado con éxito</value>
+  </data>
+  <data name="DeleteConfirm" xml:space="preserve">
+    <value>Estas seguro de borrar el (0):(1)?</value>
+  </data>
+  <data name="RegisterDeleteOk" xml:space="preserve">
+    <value>Registro borrado con éxito</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Si</value>
+  </data>
 </root>

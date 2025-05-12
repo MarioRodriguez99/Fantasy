@@ -20,13 +20,13 @@ namespace Fantasy.Bakend.Controllers //https://localhost:7113/
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(int id)
         {
-            var contry = _context.Countries.FindAsync(id);
-            if (contry == null)
+            var country = await _context.Countries.FindAsync(id);
+            if (country == null)
             {
                 return NotFound();
             }
 
-            return Ok(contry);
+            return Ok(country);
         }
 
         [HttpGet]
@@ -44,7 +44,7 @@ namespace Fantasy.Bakend.Controllers //https://localhost:7113/
         }
 
         [HttpPut]
-        public async Task<IActionResult> PuttAsync(Country country)
+        public async Task<IActionResult> PutAsync(Country country)
         {
             var correntContries = await _context.Countries.FindAsync(country.Id);
             if (correntContries == null)
@@ -52,7 +52,7 @@ namespace Fantasy.Bakend.Controllers //https://localhost:7113/
                 return NotFound();
             }
             correntContries.Name = country.Name;
-            _context.Update(country);
+            _context.Update(correntContries);
             await _context.SaveChangesAsync();
             return NoContent();
         }

@@ -17,6 +17,12 @@ namespace Fantasy.Frontend.Repositories
             PropertyNameCaseInsensitive = true,//Compatibilidad entre Java y C#
         };
 
+        public async Task<HttpResponseWrapper<object>> DeleteAsync(string url)//Metodo para borrar
+        {
+            var responseHttp = await _httpClient.DeleteAsync(url);
+            return new HttpResponseWrapper<object>(null, !responseHttp.IsSuccessStatusCode, responseHttp);
+        }
+
         public async Task<HttpResponseWrapper<T>> GetAsync<T>(string url)//Metodo devuelve
         {
             var responseHttp = await _httpClient.GetAsync(url);
@@ -48,6 +54,27 @@ namespace Fantasy.Frontend.Repositories
                 return new HttpResponseWrapper<TActionResponse>(response, false, responseHttp);
             }
             return new HttpResponseWrapper<TActionResponse>(default, !responseHttp.IsSuccessStatusCode, responseHttp);
+        }
+
+        public async Task<HttpResponseWrapper<TActionResponse>> PutAsync<T, TActionResponse>(string url, T model)//Put con respuesta
+        {
+            var messageJSON = JsonSerializer.Serialize(model);
+            var messageContet = new StringContent(messageJSON, Encoding.UTF8, "application/json");
+            var responseHttp = await _httpClient.PutAsync(url, messageContet);
+            if (responseHttp.IsSuccessStatusCode)
+            {
+                var response = await UnserializeAnswer<TActionResponse>(responseHttp);
+                return new HttpResponseWrapper<TActionResponse>(response, false, responseHttp);
+            }
+            return new HttpResponseWrapper<TActionResponse>(default, true, responseHttp);
+        }
+
+        public async Task<HttpResponseWrapper<object>> PutAsync<T>(string url, T model)//Put sin respuesta
+        {
+            var messageJSON = JsonSerializer.Serialize(model);
+            var messageContet = new StringContent(messageJSON, Encoding.UTF8, "application/json");
+            var responseHttp = await _httpClient.PutAsync(url, messageContet);
+            return new HttpResponseWrapper<object>(null, !responseHttp.IsSuccessStatusCode, responseHttp);
         }
 
         private async Task<T> UnserializeAnswer<T>(HttpResponseMessage responseHttp)
