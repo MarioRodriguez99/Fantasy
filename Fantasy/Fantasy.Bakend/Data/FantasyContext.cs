@@ -1,7 +1,7 @@
 ﻿using Fantasy.Shared.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Fantasy.Bakend.Data
+namespace Fantasy.Backend.Data
 {
     public class FantasyContext : DbContext
 

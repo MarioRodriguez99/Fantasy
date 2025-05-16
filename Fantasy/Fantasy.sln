@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.Bakend", "Fantasy.Bakend\Fantasy.Bakend.csproj", "{A32EB2F4-6726-4D4B-A1E1-FD9FEF89BD2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.Backend", "Fantasy.Bakend\Fantasy.Backend.csproj", "{A32EB2F4-6726-4D4B-A1E1-FD9FEF89BD2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.Frontend", "Fantasy.Frontend\Fantasy.Frontend.csproj", "{16F64235-131C-4D76-BD2A-33E337D73512}"
 EndProject

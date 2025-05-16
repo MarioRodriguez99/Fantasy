@@ -1,7 +1,4 @@
-﻿@page "/countries" 
-
-<!--Navegar desde ... -->
-<!--Codigo HTML-->
+﻿@page "/countries"
 <h3>@Localizer["Countries"]</h3>
 
 <div class="mb-3">
@@ -9,12 +6,12 @@
 </div>
 
 <GenericList MyList="Countries">
-   
     <Body>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>@Localizer["Country"]</th>
+                    <th># @Localizer["Teams"]</th>
                     <th></th>
                 </tr>
             </thead>
@@ -23,12 +20,14 @@
                 {
                     <tr>
                         <td>
-                            @country.Name 
+                            @country.Name
+                        </td>
+                        <td>
+                            @country.TeamsCount
                         </td>
                         <td>
                             <a class="btn btn-warning" href="/countries/edit/@country.Id">@Localizer["Edit"]</a>
                             <button class="btn btn-danger" @onclick=@(() => DeleteAsync(country))>@Localizer["Delete"]</button>
-
                         </td>
                     </tr>
                 }
@@ -36,7 +35,4 @@
         </table>
     </Body>
 </GenericList>
-
-
-
 
